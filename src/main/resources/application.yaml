@@ -14,3 +14,5 @@ spring:
 server:
   servlet:
     context-path: /api/unitech
+
+access_key: wYA2B6H90Gy40hA022p8iW05HOJaQFb1

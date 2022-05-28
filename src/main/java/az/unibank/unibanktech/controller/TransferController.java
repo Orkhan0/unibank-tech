@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TransferController {
 
     private final TransferService transferService;
-
     @PostMapping
     public TransferResponse transfer(@RequestBody TransferRequest transferRequest) {
         return transferService.transfer(transferRequest);

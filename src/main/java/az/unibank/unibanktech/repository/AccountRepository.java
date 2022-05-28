@@ -12,4 +12,5 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     List<Account> findAccountsByUserAndActiveIsTrue(User user);
 
     Optional<Account> findByAccountNumber(String accountNumber);
+
 }

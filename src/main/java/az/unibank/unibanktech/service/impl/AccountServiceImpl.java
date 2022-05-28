@@ -9,7 +9,6 @@ import az.unibank.unibanktech.exception.GeneralException;
 import az.unibank.unibanktech.repository.AccountRepository;
 import az.unibank.unibanktech.service.AccountService;
 import az.unibank.unibanktech.service.UserService;
-import javassist.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.context.SecurityContextHolder;

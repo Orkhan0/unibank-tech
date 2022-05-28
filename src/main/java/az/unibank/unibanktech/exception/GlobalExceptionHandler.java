@@ -21,14 +21,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static az.unibank.unibanktech.exception.HttpResponseConstants.*;
+import static az.unibank.unibanktech.exception.HttpResponseConstants.ERROR;
+import static az.unibank.unibanktech.exception.HttpResponseConstants.ERRORS;
+import static az.unibank.unibanktech.exception.HttpResponseConstants.MESSAGE;
+import static az.unibank.unibanktech.exception.HttpResponseConstants.PATH;
+import static az.unibank.unibanktech.exception.HttpResponseConstants.STATUS;
 
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler extends DefaultErrorAttributes {
 
     private static final String ARGUMENT_VALIDATION_FAILED = "Argument validation failed";
-
 
     @ExceptionHandler(HttpClientErrorException.Unauthorized.class)
     public final ResponseEntity<Map<String, Object>> handle(HttpClientErrorException.Unauthorized ex, WebRequest request) {
@@ -50,7 +53,7 @@ public class GlobalExceptionHandler extends DefaultErrorAttributes {
 
     @ExceptionHandler(MismatchedInputException.class)
     public final ResponseEntity<Map<String, Object>> handle(MismatchedInputException ex, WebRequest request) {
-        log.trace("Mismatched inout {}", ex.getMessage());
+        log.trace("Mismatched input {}", ex.getMessage());
         return ofType(request, HttpStatus.BAD_REQUEST, ex.getMessage());
     }
 
