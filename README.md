@@ -24,7 +24,7 @@ Content-Type: application/json
 POST /api/unitech/authentications
 Host: localhost:8080
 Content-Type: application/json
-Authorization: Basic base64(username:password)
+Authorization: Basic base64(pin:password)
 {
   "password": "string",
   "pinCode": "string"
